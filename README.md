@@ -11,7 +11,7 @@
 ## Installation
 
 * ` git clone https://github.com/serlersdm/serlerrRepo.git`
-* `cd online`
+* `cd serlerrRepo`
 * `npm install`
 * You will need a Mongo instance running. In a new terminal window run `mongod`
 * `node app`
