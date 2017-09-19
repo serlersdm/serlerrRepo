@@ -18,6 +18,10 @@ router.get('/profile', isLoggedIn, function(req, res) {
   res.render('profile.ejs', { user: req.user });
 });
 
+router.get('/welcome', isLoggedIn, function(req, res) {
+  res.render('welcome.ejs', { user: req.user });
+});
+
 router.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
@@ -38,7 +42,7 @@ router.post('/login', passport.authenticate('local-login', {
 router.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
 
 router.get('/auth/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/profile',
+  successRedirect: '/welcome',
   failureRedirect: '/',
 }));
 

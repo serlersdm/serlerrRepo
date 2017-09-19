@@ -1,8 +1,6 @@
-# express-authentication
+# Serler
 
-Simple authentication app using express, node & passport.
 
-Authenticate locally or through Facebook, Twitter or Google.
 
 ## Prerequisites 
 
@@ -12,10 +10,10 @@ Authenticate locally or through Facebook, Twitter or Google.
 
 ## Installation
 
-* ` git clone https://github.com/danielgynn/express-authentication.git`
-* `cd express-authentication`
+* ` git clone https://github.com/serlersdm/serlerrRepo.git`
+* `cd serlerrRepo`
 * `npm install`
 * You will need a Mongo instance running. In a new terminal window run `mongod`
 * `node app`
 
-Head over to [http://localhost:3000](http://localhost:3000)
+Head over to [http://localhost:8080](http://localhost:8080)

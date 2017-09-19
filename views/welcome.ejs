@@ -1,0 +1,69 @@
+<% include partials/head %>
+
+<style>
+  ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+  }
+  
+  li {
+      float: left;
+  }
+  
+  li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+  
+  li a:hover {
+      background-color: #111;
+  }
+  </style>
+
+  <body>
+    <!-- <div class="col-sm-8 col-sm-offset-2">
+      <div class="text-center">
+        <h1 class=" fa fa-user"> Welcome to Serlerr USer!!</h1><br>
+       
+        <span><strong>user id</strong>: <%= user._id ? user._id : '' %></span><br>
+        <span class="fa fa-sign-out"><a href="/"> Sign out</a></span>
+        <hr>
+        <div class="jumbotron" style="background-color:transparent">
+          <% if (user.local.email != null) { %>
+            <br>
+            <strong>email</strong>: <%= user.local.email %><br>
+          <% } %>
+
+
+          
+          <!-- <% if (user.facebook.id != null) { %>
+            <h2 class="fa fa-facebook"> Facebook</h2><br>
+            <br>
+            <strong>id</strong>: <%= user.facebook.id %><br>
+            <strong>email</strong>: <%= user.facebook.email %><br>
+            <strong>name</strong>: <%= user.facebook.name %>
+          <% } %> -->
+
+
+        </div>
+      </div>
+    </div> -->
+    
+    <ul>
+      <li><a class="active" href="welcome">Home</a></li>
+      <li><a href="#" onclick="alert('Feature not implemented!')">Upload Article</a></li>
+      <li><a href="#" onclick="alert('Feature not implemented!')">See New Articles</a></li>
+      <li><a href="profile">My Profile</a></li>
+      <li><a href="http://localhost:8080">Signout</a></li>
+    </ul>
+
+
+
+  </body>
+</html>
