@@ -89,6 +89,15 @@ module.exports = function(passport) {
       });
     });
   }));
+/*      exports.fb_auth = function(req, res, next){
+  passport.authenticate('facebook')(req, res, next);
+  return;
+};
+
+exports.fb_callback = function(req, res, next){
+  passport.authenticate('facebook', { successRedirect: '/',
+    failureRedirect: '/login' })(req, res, next);
+};*/
 
   // passport.use(new TwitterStrategy({
   //   consumerKey: configAuth.twitterAuth.consumerKey,
