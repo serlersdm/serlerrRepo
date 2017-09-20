@@ -3,7 +3,7 @@ var passport = require('passport');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Serler' });
 });
 
 router.get('/login', function(req, res, next) {
@@ -22,9 +22,11 @@ router.get('/welcome', isLoggedIn, function(req, res) {
   res.render('welcome.ejs', { user: req.user });
 });
 
-router.get('/logout', function(req, res) {
-  req.logout();
-  res.redirect('/');
+router.get('/logout',  function(req, res) {
+    
+        req.logout();
+        req.session.destroy();
+        res.redirect('/');
 });
 
 router.post('/signup', passport.authenticate('local-signup', {
@@ -67,3 +69,5 @@ function isLoggedIn(req, res, next) {
       return next();
   res.redirect('/');
 }
+
+
