@@ -1,5 +1,5 @@
 <% include partials/head %>
-
+ 
   <body background="bg.png">
 <div class="content">
  <h1 style="font-family: 'Pacifico', cursive; text-align: center; font-size:50px;">Welcome to Serler</h1>
@@ -17,14 +17,14 @@
           </div>
           <div class="form-group">
           
-            <input type="password" placeholder="Password" class="form-control font20" name="password" />
+            <input id="password" type="password" placeholder="Password" class="form-control font20" name="password" />
           </div>
           <div class="form-group">
           
-            <input type="password" placeholder="Confirm Password" class="form-control font20" name="password" />
+            <input id="confirm_password" type="password" placeholder="Confirm Password" class="form-control font20" name="password" />
           </div>
           <div>
-            <input type="submit" class="form-control font20 sgnup" value="Submit" />
+            <input id="submitBtn" type="submit" class="form-control font20 sgnup" value="Submit" disabled="true"/>
           </div>
         </form>
   <div class="social"> <span>or sign up with social media</span></div>
@@ -36,4 +36,17 @@
   <div class="already">Already have an account? <a href="/login"><span class="fa fa-sign-in"></span> Login</a></div>
 </div>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      $('#password,#confirm_password').on('keyup', function () {
+      if ($('#password').val() == $('#confirm_password').val()) {
+        $('#confirm_password').css('color', 'green');
+           document.getElementById("submitBtn").disabled = false;
+      } else {
+          $('#confirm_password').css('color', 'red');
+           document.getElementById("submitBtn").disabled = true;
+      }
+        
+      });
+    </script>
   </html>
