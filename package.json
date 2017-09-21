@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "test": "./node_modules/jshint/bin/jshint hello.js"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -23,5 +24,6 @@
     "passport-google-oauth": "^0.2.0",
     "passport-local": "~1.0.0",
     "serve-favicon": "~2.3.0"
+    "jshint": "^2.6.0"
   }
 }
