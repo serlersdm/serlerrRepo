@@ -22,12 +22,14 @@ router.get('/welcome', isLoggedIn, function(req, res) {
   res.render('welcome.ejs', { user: req.user });
 });
 
-router.get('/logout',  function(req, res) {
-    
-        req.logout();
+router.get('/logout',  function(req, res, next) {
+        res.clearCookie(); 
+        req.logOut();
         req.session.destroy();
-        res.redirect('/');
+    res.render('index', { title: 'Serler' });
+
 });
+
 
 router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: '/profile',
