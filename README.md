@@ -12,8 +12,8 @@
 
 * ` git clone https://github.com/serlersdm/serlerrRepo.git`
 * `cd serlerrRepo`
-* `npm install`
-* You will need a Mongo instance running. In a new terminal window run `mongod`
-* `node app`
+* `npm install- in case of any error of any dependancy not being installed.`
+* You will need a Mongo instance running. In a new terminal window run `mongod` or 'mongod -dbpath .\data\db' .
+* `npm start`
 
-Head over to [http://localhost:8080](http://localhost:8080)
+Head over to [http://localhost:3000](http://localhost:3000)
