@@ -1,3 +1,6 @@
 language: ruby
-ruby:
-  - 5.3.0
+rvm:
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
