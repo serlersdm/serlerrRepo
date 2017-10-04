@@ -4,11 +4,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 html {
   background-image: url("../bg.png");
 }
-
 body {
   font-family: "Open Sans";
   font-size: 16px;
@@ -16,11 +14,18 @@ body {
   font-smoothing: antialiased;
   font-weight: 600;
 }
-
 a {
-  color: #BBB;
+      color:none;
+    border: none;
+    text-decoration:none;
+    
 }
-
+a:hover, a:focus {
+    color:#fff;
+    text-decoration: none;
+    font-size: larger;
+    
+}
 .content:before {
   content: "";
   position: fixed;
@@ -41,7 +46,6 @@ a {
   -ms-filter: blur(2px);
   filter: blur(2px);
 }
-
 .content {
   position: absolute;
   top: 0;
@@ -192,7 +196,7 @@ a {
   font-size: 1.1 rem;
   padding: 10px;
   margin: 20px 0px;
-  background-color: #66A756;
+  background-color: #E65100;
   color: White;
   border: none;
     height: 45px;
@@ -215,7 +219,6 @@ a {
 .alert-danger{
         background-color: transparent;
 }
-
 /* vietnamese */
 @font-face {
   font-family: 'Pacifico';
@@ -254,4 +257,18 @@ a {
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 50px;
     font-weight: 300;
+}
+#submitBtn{
+    background-color: #6200EA;
+}
+#loginBtn{
+      background-color: #6200EA;  
+}
+.headText{
+    font-family: 'Pacifico', cursive;
+    text-align: center; 
+    font-size:50px;
+}
+.mt65{
+margin-top: 65px; 
 }
