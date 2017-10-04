@@ -1,6 +1,28 @@
 language: ruby
 rvm:
-- 2.0.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
+  - 2.2.2
+  - ruby-head
+
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+
+cache: bundler
+
+#------------------------------
+# Setup
+before_script:
+npm install -g gulp-cli@4.0
+  - node -v
+  # update npm
+  - npm install npm -g
+
+  # install Gulp 4 CLI tools globally from 4.0 GitHub branch
+  - npm install https://github.com/gulpjs/gulp-cli/tarball/4.0 -g
+
+#------------------------------
+# Build
+script: bundle exec rake
+
+before_install:
+  - nvm install node
