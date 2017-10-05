@@ -2,7 +2,7 @@
 
   <body>
     <div class="content ">
-    <h1 class="headText mt65">Login into Serler</h1>
+    <h1 class="headText ">Login into Serler</h1>
   <div class="title">Login</div>
         <% if (message != null) { %>
         <div class="alert-danger"><%= message %></div>
@@ -25,9 +25,15 @@
 
         <div class="social"> <span>Don't have an account?</span></div>
 
-        <hr style=" border-top: 0px solid #eee;">
+        <hr style="border-top: 0px solid #eee;margin-top: 0px;margin-bottom: 0px;">
 
-        <div style="text-align:center"><a href="/" class="sgnup">Create an account</a></div>
+        <div style="text-align:center"><a href="/create" class="sgnup">Create an account</a></div>
+        <div class="social" style="margin-top: 20px;"> <span>or Llogin with social media</span></div>
+              <div class="buttons">
+                    <a href="/auth/facebook" class="btn btn-facebook font25"><span class="fa fa-facebook"></span>&nbsp;&nbsp;Facebook</a>
+                     <!-- <a href="/auth/twitter" class="btn btn-info"><span class="fa fa-twitter"></span> Twitter</a> -->
+                    <a href="/auth/google" class="btn btn-google font25"><span class="fa fa-google-plus"></span>&nbsp;&nbsp;Google</a>
+        </div>
     </div>
   </body>
 </html>

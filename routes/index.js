@@ -10,8 +10,8 @@ router.get('/login', function(req, res, next) {
   res.render('login.ejs', { message: req.flash('loginMessage') });
 });
 
-router.get('/signup', function(req, res) {
-  res.render('signup.ejs', { message: req.flash('signupMessage') });
+router.get('/create', function(req, res) {
+  res.render('create.ejs', { message: req.flash('signupMessage') });
 });
 
 router.get('/profile', isLoggedIn, function(req, res) {
@@ -21,7 +21,12 @@ router.get('/profile', isLoggedIn, function(req, res) {
 router.get('/welcome', isLoggedIn, function(req, res) {
   res.render('welcome.ejs', { user: req.user });
 });
-
+router.get('/loggedin', isLoggedIn, function(req, res) {
+  res.render('loggedin.ejs', { user: req.user });
+});
+router.get('/logout', function(req, res, next) {
+  res.render('logout.ejs', { title: 'Serler' });
+});
 router.get('/logout',  function(req, res, next) {
         res.clearCookie(); 
         req.logOut();
@@ -31,14 +36,14 @@ router.get('/logout',  function(req, res, next) {
 });
 
 
-router.post('/signup', passport.authenticate('local-signup', {
-  successRedirect: '/profile',
+router.post('/create', passport.authenticate('local-signup', {
+  successRedirect: '/loggedin',
   failureRedirect: '/signup',
   failureFlash: true,
 }));
 
 router.post('/login', passport.authenticate('local-login', {
-  successRedirect: '/profile',
+  successRedirect: '/loggedin',
   failureRedirect: '/login',
   failureFlash: true,
 }));
@@ -46,21 +51,21 @@ router.post('/login', passport.authenticate('local-login', {
 router.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
 
 router.get('/auth/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/welcome',
+  successRedirect: '/loggedin',
   failureRedirect: '/',
 }));
 
 router.get('/auth/twitter', passport.authenticate('twitter'));
 
 router.get('/auth/twitter/callback', passport.authenticate('twitter', {
-  successRedirect: '/profile',
+  successRedirect: '/loggedin',
   failureRedirect: '/',
 }));
 
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 router.get('/auth/google/callback', passport.authenticate('google', {
-  successRedirect: '/profile',
+  successRedirect: '/loggedin',
   failureRedirect: '/',
 }));
 

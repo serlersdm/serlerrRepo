@@ -1197,8 +1197,9 @@ you can use the generic selector below, but it's slower:
                                 
                             </ul>
                             <ul class="member-actions">
-                                <li><a href="/login"  class="login">Log in</a></li>
-                                <li><a href="/create" class="btn-white btn-small">Sign up</a></li>
+                               <li><a href="/profile"  class="login"><%= user.email %></a></li>
+                                <!--<li><a href="/login"  class="login">Log in</a></li>-->
+                                <li><a href="/logout" class="btn-white btn-small">logout</a></li>
                             </ul>
                         </nav>
                     </div>

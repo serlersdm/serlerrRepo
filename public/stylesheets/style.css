@@ -138,6 +138,7 @@ a:hover, a:focus {
   position: relative;
   overflow: hidden;
   text-align: center;
+    margin-bottom: 20px;
 }
 .content .social span {
   display: inline-block;
