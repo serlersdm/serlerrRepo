@@ -1184,7 +1184,7 @@ you can use the generic selector below, but it's slower:
     <!--[if lt IE 8]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <section class="hero">
+      <section class="hero">
         <section class="navigation">
             <header>
                 <div class="header-content">
@@ -1197,9 +1197,8 @@ you can use the generic selector below, but it's slower:
                                 
                             </ul>
                             <ul class="member-actions">
-                               <li><a href="/profile"  class="login"><%= user.email %></a></li>
-                                <!--<li><a href="/login"  class="login">Log in</a></li>-->
-                                <li><a href="/logout" class="btn-white btn-small">logout</a></li>
+                                <li><a href="/profile"  class="login"><%= user.local.email %></a></li>
+                                <li><a href="/logout" class="btn-white btn-small">Logout</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -1213,17 +1212,75 @@ you can use the generic selector below, but it's slower:
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="hero-content text-center">
-                        <h1>Welcome to SERLER</h1>
-                        <p class="intro">Introducing “Sedna”. A responsive one page website, designed & developed by Peter Finlan, exclusively for Codrops.</p>
+                        <h1>welocome to SERLER</h1>
+                        <p class="intro">Introducing “SERLER”. Let your articles talk to the world.</p>
                         
                     </div>
                 </div>
             </div>
         </div>
+        
+            <div class="col-md-6">
+                
+                <div class="list-group" style="height: 100%">
+  <a href="#" class="list-group-item active">
+    News Feeds
+  </a>
+  <a href="#" class="list-group-item">Articles added into Serler</a>
+  <a href="#" class="list-group-item">News</a>
+  <a href="#" class="list-group-item">News</a>
+  <a href="#" class="list-group-item">News</a>
+   <a href="#" class="list-group-item">News</a>
+</div>
+            </div>
+            <div class="col-md-6">
+                
+                <div class="list-group" style="height: 120px overflow: scroll;">
+  <a href="#" class="list-group-item active">
+    All Articles
+  </a>
+  <table class="table table-hover table-inverse" style=" background-color: white">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Article Name</th>
+      <th>Date Submitted</th>
+      <th>Status</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Article Name</td>
+      <td>Date Submitted</td>
+        <td>Status</td>
+        <td><button type="button" class="btn btn-info">View</button>
+       </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Article Name</td>
+      <td>Date Submitted</td>
+        <td>Status</td>
+        <td><button type="button" class="btn btn-info">View</button>
+        </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Article Name</td>
+      <td>Date Submitted</td>
+        <td>Status</td>
+        <td><button type="button" class="btn btn-info">View</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+            </div>
+     
         </section>
     
 
-    
     
     
     
