@@ -16,8 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
-
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> 
  <style>
     @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic,700,700italic);
@@ -1201,11 +1200,11 @@ $('#myModal').modal('show');
                             <ul class="primary-nav">
                                 <li><a href="#features">Features</a></li>
                                 <li><a href="#assets">About Us</a></li>
-                                <li><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myArticle">New Article</button></li>
+                                <!--<li><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myArticle">New Article</button></li>-->
                                 
                             </ul>
                             <ul class="member-actions">
-                                <li><a href="/profile"  class="login"><%= user.local.email %><%= user.facebook.name %> </a></li>
+                                <li><a href="/profile"  class="login">Modulator</a></li>
                                 <li><a href="/logout" class="btn-white btn-small">Logout</a></li>
                             </ul>
                         </nav>
@@ -1262,7 +1261,7 @@ $('#myModal').modal('show');
       <td>Article Name</td>
       <td>Date Submitted</td>
         <td>Status</td>
-        <td><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">View</button>
+        <td><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Modulate</button>
        </td>
     </tr>
     <tr>
@@ -1270,7 +1269,7 @@ $('#myModal').modal('show');
       <td>Article Name</td>
       <td>Date Submitted</td>
         <td>Status</td>
-        <td><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">View</button>
+        <td><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Modulate</button>
         </td>
     </tr>
     <tr>
@@ -1278,7 +1277,7 @@ $('#myModal').modal('show');
       <td>Article Name</td>
       <td>Date Submitted</td>
         <td>Status</td>
-        <td><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">View</button></td>
+        <td><button id="mdButton" type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal">Modulate</button></td>
     </tr>
              
               </tbody>
@@ -1300,7 +1299,7 @@ $('#myModal').modal('show');
         <h4 class="modal-title" id="myModalLabel">Article</h4>
       </div>
       <div class="modal-body">
-        <h1>Lorem Ipsum</h1>
+       <h1>Lorem Ipsum</h1>
 <p>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
 "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</p>
 
@@ -1318,12 +1317,14 @@ Generated 10 paragraphs, 822 words, 5612 bytes of Lorem Ipsum
 help@lipsum.com
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Reject</button>
+        <button id="sendAnalyst" type="button" class="btn btn-primary"  ><a href="/sendAnalyst">Accept</a></button> 
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
 </div> 
+   
     
     <!-- New article modal form -->
     <div class="modal fade" id="myArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -1368,28 +1369,15 @@ help@lipsum.com
   
 </form>
        
-   
-       
-       
-       
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-       <button id="sendModulator" type="submit" class="btn btn-primary" ><a href="/sendModulator" >Submit</a></button>
-      </div>
-    </div>
-  </div>
-</div> 
-    <script>
+   <script>
 $(document).ready(function(){
   
     
-    $("#sendModulator").click(function(){ 
-        var subject='New article has been submitted. Modulation Needed!!';
+    $("#send").click(function(){ 
+        var subject='New article has ben submitted. Modulation Needed!!';
     var to ='serlersdm@gmail.com';
-    var text = 'New article has been submitted. Modulation Needed!!';
-        $.get("http://localhost:3000/sendModulator",{to:to,subject:subject,text:text},function(data){
+    var text = 'New article has ben submitted. Modulation Needed!!';
+        $.get("http://localhost:3000/send",{to:to,subject:subject,text:text},function(data){
         if(data=="sent")
         {
             $("#message").empty().html("
@@ -1403,6 +1391,19 @@ Email is been sent at "+to+" . Please check inbox!
     });
 });
 </script>    
+       
+       
+       
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       <button id="send" type="submit" class="btn btn-primary"><a href="/send">Submit</a></button>
+      </div>
+    </div>
+  </div>
+</div> 
+    
     <footer>
         <div class="container">
             <div class="row">

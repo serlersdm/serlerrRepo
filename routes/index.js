@@ -1,10 +1,13 @@
 var express = require('express');
 var passport = require('passport');
+
+
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Serler' });
 });
+
 
 router.get('/login', function(req, res, next) {
   res.render('login.ejs', { message: req.flash('loginMessage') });
@@ -12,6 +15,13 @@ router.get('/login', function(req, res, next) {
 
 router.get('/create', function(req, res) {
   res.render('create.ejs', { message: req.flash('signupMessage') });
+});
+
+router.get('/modulator', function(req, res) {
+  res.render('modulator.ejs', { message: req.flash('signupMessage') });
+});
+router.get('/analyst', function(req, res) {
+  res.render('analyst.ejs', { message: req.flash('signupMessage') });
 });
 
 router.get('/profile', isLoggedIn, function(req, res) {

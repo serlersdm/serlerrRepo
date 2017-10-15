@@ -21,6 +21,61 @@ var configDB = require('./config/database.js');
 mongoose.connect(configDB.url);
 
 var app = express();
+var nodemailer = require("nodemailer");
+var smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: {
+        user: "serlersdm@gmail.com",
+        pass: "Serler@123456"
+    }
+});
+app.get('/sendModulator',function(req,res){
+    
+
+    var mailOptions={
+   to : 'modulatorserler@gmail.com',
+   subject : 'Modulation Needed!!',
+   text :'Hi Modulator,\n\nNew article has been submitted by a registered user.\n\nThe article needs to modulated within the next 24 Hours.\n\nClick below to modulate the Article.\nLink : http://localhost:3000/modulator\n\nThanks.\n\n\n\n\n\Regards,\nSERLER.'
+    }
+    
+    console.log(mailOptions);
+    
+    smtpTransport.sendMail(mailOptions, function(error, response){
+    if(error){
+    console.log(error);
+    res.end("error" + to + subject );
+    }else{
+    window.location = "http://localhost:3000/modulator";
+    
+    }
+    });
+    
+});
+
+app.get('/sendAnalyst',function(req,res){
+    
+
+    var mailOptions={
+   to : 'analystserler@gmail.com',
+   subject : 'Analysis Needed!!',
+   text :'Hi Analyst,\n\nNew article has been submitted by a registered user.\n\nThe article needs to modulated within the next 24 Hours.\n\nClick below to analyze the Article.\nLink : http://localhost:3000/analyst\n\nThanks.\n\n\n\n\n\Regards,\nSERLER.'
+    }
+    
+    console.log(mailOptions);
+    
+    smtpTransport.sendMail(mailOptions, function(error, response){
+    if(error){
+    console.log(error);
+    res.end("error" + to + subject );
+    }else{
+    console.log("Message sent: " + response.message);
+   res.successRedirect('/loggedin');
+    
+    }
+    });
+    
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
