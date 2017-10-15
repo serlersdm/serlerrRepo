@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./bin/www",
     "test": "./node_modules/jshint/bin/jshint hello.js"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "ejs": "~2.3.3",
     "express-session": "^1.12.1",
     "font-awesome": "github:FortAwesome/Font-Awesome",
+    "gmail-send": "^1.2.11",
     "jshint": "^2.6.0",
     "mongoose": "^4.2.6",
     "morgan": "~1.6.1",

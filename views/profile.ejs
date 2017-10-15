@@ -1,45 +1,78 @@
 <% include partials/head %>
-
+    <link rel="stylesheet" href="../stylesheets/serlerstyle_v1.css">
   <body>
-    <div class="col-sm-8 col-sm-offset-2">
+
+    <section class="hero">
+        <section class="navigation">
+            <header>
+                <div class="header-content">
+                    <div class="logo"><img src="serler.png" width="160px" alt="Serler logo"></div>
+                    <div class="header-nav">
+                        <nav>
+
+                            <ul class="member-actions">
+             
+                                <li><a href="/loggedin"  class="btn-white btn-small">Back</a></li>
+                                <li><a href="/logout" class="btn-white btn-small">logout</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="hero-content text-center">
+                            
       <div class="text-center">
-        <h1 class=" fa fa-user"> Profile</h1><br>
-        <span><strong>user id</strong>: <%= user._id ? user._id : '' %></span><br>
-        <span class="fa fa-sign-out"><a href="/logout"> Sign out</a></span>
-        <hr>
-        <div class="jumbotron" style="background-color:transparent">
+        <h1 class=" fa fa-user">Profile</h1><br>
+                <div class="jumbotron" >
+        <div  ><strong>User Id</strong>: <%= user._id ? user._id : '' %></span><br>
+
           <% if (user.local.email != null) { %>
             <br>
-            <strong>email</strong>: <%= user.local.email %><br>
+            <strong>Email</strong>: <%= user.local.email %><br>
           <% } %>
 
           <% if (user.facebook.id != null) { %>
             <h2 class="fa fa-facebook"> Facebook</h2><br>
             <br>
-            <strong>id</strong>: <%= user.facebook.id %><br>
-            <strong>email</strong>: <%= user.facebook.email %><br>
-            <strong>name</strong>: <%= user.facebook.name %>
+            <strong>Id</strong>: <%= user.facebook.id %><br>
+            <strong>Email</strong>: <%= user.facebook.email %><br>
+            <strong>Name</strong>: <%= user.facebook.name %>
           <% } %>
 
           <% if (user.twitter.id != null) { %>
             <h2 class="fa fa-twitter"> Twitter</h2><br>
             <br>
-            <strong>id</strong>: <%= user.twitter.id %><br>
-            <strong>token</strong>: <%= user.twitter.token %><br>
-            <strong>username</strong>: <%= user.twitter.username %><br>
-            <strong>displayName</strong>: <%= user.twitter.displayName %>
+            <strong>Id</strong>: <%= user.twitter.id %><br>
+            <strong>Token</strong>: <%= user.twitter.token %><br>
+            <strong>Username</strong>: <%= user.twitter.username %><br>
+            <strong>DisplayName</strong>: <%= user.twitter.displayName %>
           <% } %>
 
           <% if (user.google.id != null) { %>
             <h2 class="fa fa-google-plus"> Google</h2><br>
             <br>
-            <strong>id</strong>: <%= user.google.id %><br>
-            <strong>token</strong>: <%= user.google.token %><br>
-            <strong>email</strong>: <%= user.google.email %><br>
-            <strong>name</strong>: <%= user.google.name %>
+            <strong>Id</strong>: <%= user.google.id %><br>
+            <strong>Token</strong>: <%= user.google.token %><br>
+            <strong>Email</strong>: <%= user.google.email %><br>
+            <strong>Name</strong>: <%= user.google.name %>
           <% } %>
         </div>
       </div>
-    </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+
+
+
   </body>
 </html>
