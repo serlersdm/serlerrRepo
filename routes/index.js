@@ -58,7 +58,7 @@ router.post('/login', passport.authenticate('local-login', {
   failureFlash: true,
 }));
 
-router.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
+router.post('/auth/facebook', passport.authenticate('facebook', { scope: 'email' }));
 
 router.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/loggedin',
